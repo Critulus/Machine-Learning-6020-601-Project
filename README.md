@@ -15,8 +15,24 @@ Machine-Learning-6020-601-Project/
 │   ├── 2_corpus_characterize.py   # Profile corpus statistics, generate charts
 │   ├── 3_sample_ground_truth.py   # Select 30–50 pages for manual annotation
 │   └── phase1_report.qmd          # Written deliverable
-├── phase2/                    # Preprocessing Pipeline (Week 2)
-├── phase3/                    # OCR Pipeline (Week 3)
+├── phase2/
+│   ├── 4_preprocess_images.py
+│   ├── README.md
+│   └── outputs/
+│       ├── preprocessed_images/
+│       ├── preprocessing_report.csv
+│       └── sample_comparisons/
+│
+├── phase3/
+│   ├── 5_run_ocr.py
+│   ├── 6_compare_ocr_models.py
+│   ├── README.md
+│   └── outputs/
+│       ├── tesseract/
+│       ├── tesseract_ocr_log.csv
+│       └── metrics/
+│           ├── ocr_comparison_results.csv
+│           └── ocr_summary.csv
 ├── phase4/                    # Validation Framework (Week 4)
 ├── phase5/                    # Analysis & Final Report (Weeks 5–6)
 ├── data/                      # NOT committed to git (see .gitignore)
