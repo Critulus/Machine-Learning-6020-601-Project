@@ -10,7 +10,7 @@ Input:
 Output:
   phase3/outputs/tesseract/*.txt
 """
-
+import pytesseract
 import argparse
 from pathlib import Path
 
