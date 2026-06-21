@@ -70,27 +70,22 @@ def save_comparison(original_path: Path, processed_path: Path, comparison_path: 
     if original is None or processed is None:
         return
 
-    if processed is None:
-    return
-
-if len(processed.shape) == 2:
-    # Handle grayscale and color images
-if len(processed.shape) == 2:
-    processed_color = cv2.cvtColor(processed, cv2.COLOR_GRAY2BGR)
-else:
-    processed_color = processed.copy()
-else:
-    processed_color = processed
+    if len(processed.shape) == 2:
+        processed_color = cv2.cvtColor(processed, cv2.COLOR_GRAY2BGR)
+    else:
+        processed_color = processed.copy()
 
     height = min(original.shape[0], processed_color.shape[0])
-    original = cv2.resize(original, (int(original.shape[1] * height / original.shape[0]), height))
-    processed_color = cv2.resize(
+    original_resized = cv2.resize(
+        original,
+        (int(original.shape[1] * height / original.shape[0]), height)
+    )
+    processed_resized = cv2.resize(
         processed_color,
         (int(processed_color.shape[1] * height / processed_color.shape[0]), height)
     )
 
-    comparison = cv2.hconcat([original, processed_color])
-    comparison_path.parent.mkdir(parents=True, exist_ok=True)
+    comparison = np.hstack([original_resized, processed_resized])
     cv2.imwrite(str(comparison_path), comparison)
 
 
