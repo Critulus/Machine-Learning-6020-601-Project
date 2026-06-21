@@ -74,7 +74,11 @@ def save_comparison(original_path: Path, processed_path: Path, comparison_path: 
     return
 
 if len(processed.shape) == 2:
+    # Handle grayscale and color images
+if len(processed.shape) == 2:
     processed_color = cv2.cvtColor(processed, cv2.COLOR_GRAY2BGR)
+else:
+    processed_color = processed.copy()
 else:
     processed_color = processed
 
