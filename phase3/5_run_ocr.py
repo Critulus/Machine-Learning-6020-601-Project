@@ -11,6 +11,7 @@ Output:
   phase3/outputs/tesseract/*.txt
 """
 import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import argparse
 from pathlib import Path
 
