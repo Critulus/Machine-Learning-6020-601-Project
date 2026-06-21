@@ -70,7 +70,13 @@ def save_comparison(original_path: Path, processed_path: Path, comparison_path: 
     if original is None or processed is None:
         return
 
+    if processed is None:
+    return
+
+if len(processed.shape) == 2:
     processed_color = cv2.cvtColor(processed, cv2.COLOR_GRAY2BGR)
+else:
+    processed_color = processed
 
     height = min(original.shape[0], processed_color.shape[0])
     original = cv2.resize(original, (int(original.shape[1] * height / original.shape[0]), height))
