@@ -5,22 +5,24 @@
 ## Project Structure
 
 ```
-telugu-ocr-project/
+Machine-Learning-6020-601-Project/
 ├── README.md
 ├── requirements.txt
-├── environment.yml
+├── .gitignore                     # Excludes data/ from version control
 ├── phase1/                    # Corpus Characterization (Week 1)
-│   ├── corpus_characterize.py     # Profile corpus statistics
-│   ├── sample_ground_truth.py     # Select 30–50 pages for manual annotation
+│   ├── 0_download_corpus.py       # Download corpus from HuggingFace
+│   ├── 1_build_profile.py         # Build corpus_profile.json from meta.json files
+│   ├── 2_corpus_characterize.py   # Profile corpus statistics, generate charts
+│   ├── 3_sample_ground_truth.py   # Select 30–50 pages for manual annotation
 │   └── phase1_report.qmd          # Written deliverable
 ├── phase2/                    # Preprocessing Pipeline (Week 2)
 ├── phase3/                    # OCR Pipeline (Week 3)
 ├── phase4/                    # Validation Framework (Week 4)
 ├── phase5/                    # Analysis & Final Report (Weeks 5–6)
-├── data/
-│   └── ground_truth/          # Manually annotated pages (30–50)
-└── outputs/                   # Generated OCR output, reports
-```
+├── data/                      # NOT committed to git (see .gitignore)
+│   ├── corpus/                    # Downloaded dataset
+│   └── ground_truth/              # Manually annotated pages (30–50)
+└── outputs/                   # Generated charts, stats (committed to git)
 
 ## Dataset
 
