@@ -1,5 +1,4 @@
-# This is a copy of an Group Project with Tyler Bao (https://github.com/tbao23)
-# Telugu OCR Project — CSCI/DASC 6020: Machine Learning (Summer 2026)
+# Telugu OCR Project — CSCI/DASC 6020: Machine Learning Summer 2026 (This is a copy of an Group Project with Tyler Bao https://github.com/tbao23)
 
 An end-to-end pipeline for converting scanned Telugu document images into clean Unicode text using Large Language Models, with rigorous LLM-assisted validation.
 
